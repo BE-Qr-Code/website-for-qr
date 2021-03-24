@@ -41,18 +41,18 @@ $sql = "INSERT INTO qrcode (SessionID , qrcode, qrdate, timestamp, DepartrQID, S
                     echo 'Inserted';
                     // test("added successfully");
                     // header('Location:dashboard.html');
-                    $timer=60;
-                    while($remtime>1){
-                        // $now = time();
-                        $remtime = $timer-$timestamp;
-                        $timer=$timer-1;
-                        if($remtime ==1 ){
+//                     $timer=60;
+//                     while($remtime>1){
+//                         // $now = time();
+//                         $remtime = $timer-$timestamp;
+//                         $timer=$timer-1;
+//                         if($remtime ==1 ){
                             
-                        }
+//                         }
 
 
 
-                 }
+//                  }
 
 
 
