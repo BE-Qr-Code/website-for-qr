@@ -35,13 +35,13 @@ var date =yyyy+'-'+mm+'-'+dd;
     m = today.getMinutes();
     s = today.getSeconds();
        var time =h+':'+m+':'+s; 
-       var for_expire_m = m + 5;
-       var for_expire_h = h;
-       if(for_expire>59){
-         for_expire_m=0;
-         for_expire_h=h+1;
-       }
-       var end_time=h+':'+for_expire;
+//        var for_expire_m = m + 5;
+//        var for_expire_h = h;
+//        if(for_expire>59){
+//          for_expire_m=0;
+//          for_expire_h=h+1;
+//        }
+//        var end_time=h+':'+for_expire;
 //initialize the div where you are going to display the QR(using the api)
 var qrcode = new QRCode(document.getElementById('qr_display'));
 
