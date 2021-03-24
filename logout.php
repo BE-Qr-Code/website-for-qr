@@ -17,5 +17,5 @@ else{
 //after destroying the session
 //printing the session
 print_r($_SESSION);
-
+header("Location:index.html");
 ?>
