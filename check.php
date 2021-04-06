@@ -150,10 +150,7 @@ echo
                 <input type="text" class="input3"  value="<?php echo "$row1[0]";?>" readonly>
                 </div>
                 </div>
-                <!-- <input type="button" value="Back" class="checkbtn" onclick="history.back(-1)" readonly> -->
-            
-            
-            
+                <!-- <input type="button" value="Back" class="checkbtn" onclick="history.back(-1)" readonly> -->           
              </div> 
              <!-- </div> -->
          
@@ -162,19 +159,7 @@ echo
  </body>
  </html> 
 
-
-
-
-
-
-
-
-<?php
-
-
-                
-
-            
+    <?php           
             }
         }
         else{
@@ -206,14 +191,11 @@ echo
             <input type="text" class="input3"  value="<?php echo "$row1[0]";?>" readonly>
             </div>
              <!-- </div> -->
-<?php
+    <?php
         }
     }
 }
-        }
-
-
-
+    }
 
 ?>
 

@@ -88,7 +88,7 @@ if($_SESSION["id"]==''){
             <p class="label-text">QrCode:</p>
           </div>
             <div class="a">
-            <input type="text" id="qrcode" class="input2">
+              <input type="text" id="qrcode" class="input2">
             </div>
           </div>
           <div class="cont-qr">
@@ -96,7 +96,22 @@ if($_SESSION["id"]==''){
             <p class="label-text">Subject:</p>
           </div>      
             <div class="a">
-            <input type="text" id="subjectid" class="input2">
+            <!-- <input type="text" id="subjectid" class="input2"> -->
+            <select name="subject" id="subj_options" for="Select Subject">
+                <option disabled selected>Select Subject</option>
+                <?php
+                  include "connect.php";  // Using database connection file here
+                  $id = $_SESSION['id'];
+                  $result = mysqli_query($connection, "SELECT SubjectID from Subjects where TeacherID='$id'");  // Use select query here 
+
+                  if ($result->num_rows>0) {
+                    while($data = $result->fetch_assoc()){ 
+                      $id = $data['SubjectID'];
+                      echo "<option value='$id'>$id</option>"; 
+                    }
+                  }
+                ?>          
+              </select>
           </div>
           </div>
           <div class="cont-qr">
@@ -104,7 +119,18 @@ if($_SESSION["id"]==''){
             <p class="label-text">Department ID:</p>
           </div>
             <div class="a">
-            <input type="text" id="department" class="input2">
+            <!-- <input type="text" id="department" class="input2"> -->
+            <?php
+              include "connect.php";  // Using database connection file here
+              $id = $_SESSION['id'];
+              $result = mysqli_query($connection, "SELECT DepartSID from Subjects where TeacherID='$id'");  // Use select query here 
+
+              if ($result->num_rows>0) {
+                $data = $result->fetch_assoc();
+                $id = $data['DepartSID'];
+                echo "<input type=\"text\" id=\"department\" class=\"input2\" value=\"$id\">";
+              }
+            ?>          
             </div>
           </div>
         </form>
@@ -116,7 +142,7 @@ if($_SESSION["id"]==''){
         </div>
       </div>
 
-      <div class="row qrDiv">
+      <div class="row qrDiv" style="margin-bottom: 15px;">
         <div id="qr_display">
         </div>
       </div>
