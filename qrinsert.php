@@ -15,18 +15,16 @@
         echo "<script> alert('$msg');</script>";
     }
 
-    //$endTime = $timestamp + ;
-    //echo strtotime('+10 minutes',$timestamp);
-
     if ($result = mysqli_query($connection, "SELECT * from Subjects where SubjectID='$SubjectQID' 
     AND DepartSID='$DepartrQID' AND TeacherID='$id'")) {
 
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_array($result);
 
-            $sql = "INSERT INTO qrcode (SessionID , qrcode, qrdate, timestamp, DepartrQID, SubjectQID, currDate, endtime) VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIME(), DATE_ADD(STR_TO_DATE(currDate, '%Y-%m-%d %H:%i:%s'), INTERVAL 7 MINUTE))";
+            $sql = "INSERT INTO qrcode (SessionID , qrcode, qrdate, timestamp, DepartrQID, SubjectQID, currDate, endtime)
+                    VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIME(),
+                    DATE_ADD(STR_TO_DATE(currDate, '%Y-%m-%d %H:%i:%s'), INTERVAL 7 MINUTE))";
             //DATE_ADD(STR_TO_DATE(currdatetime, '%Y-%m-%d %H:%i:%s'), INTERVAL 10 MINUTE)
-
 
             if ($stmt = $connection->prepare($sql)) {
                 // mysqli_prepare($connection, $sql)){
@@ -42,11 +40,7 @@
                 
                 //$afftected = $connection->affected_rows;
 
-                if ($res) {
-                    $sql1 = "INSERT INTO qrcode (endtime) VALUES ('00:23:44')";
-                    $stmt1 = $connection->prepare($sql1);
-                    $res = mysqli_stmt_execute($stmt1);
-                    
+                if ($res) {                    
                     echo 'Inserted';
                     // test("added successfully");
                     // header('Location:dashboard.html');

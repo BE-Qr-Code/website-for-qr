@@ -4,6 +4,10 @@ $servername='34.93.155.184';
 $username='root';
 $userpasswd='apkove';
 $database='test';
+// $servername = "localhost";
+// $username = "root";
+// $userpasswd = "";
+// $database = "test";
 
 $connection= new mysqli($servername,$username,$userpasswd,$database,3306);
 if ($connection->connect_error) {
