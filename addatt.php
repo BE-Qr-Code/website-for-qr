@@ -1,8 +1,8 @@
 <?php
 // session_start();
-$S=isset($_SERVER["id"]);
+$S = isset($_SERVER["id"]);
 // if(){
-    echo $S;
+echo $S;
 // }
 
 // print_r($_SESSION);
@@ -11,6 +11,7 @@ function test($msg)
 {
     echo "<script> alert('$msg');</script>";
 }
+
 
 
 // else {$e= $_SERVER["id"]; echo $e;}
@@ -23,6 +24,9 @@ $subjectid = $_GET['subjectid'];
 $moodleid = $_GET['moodleid'];
 $deptid = $_GET['deptid'];
 
+if($session && $subjectid && $moodleid && $deptid != '') {
+    
+  
 
 // echo $session;     
 // // 223.189.60.89
@@ -56,24 +60,22 @@ if ($stmt->num_rows == 0) {
     // die("Connection failed: " . $connection->connect_error);
     // echo mysqli_error($connection);
     // test(mysqli_error($connection));
-  
-    // header('Location:addmanually.html');
+      // header('Location:addmanually.php');
     
-
 } else {
     $stmt->bind_result($session, $final_date);
     $stmt->fetch();
     $user_details = array(
         'session' => $session
-);
+    );
     //    echo "komal";
     if ($result = mysqli_query($connection, "SELECT MoodleID from registration where MoodleID='$moodleid'")) {
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_array($result);
             // echo $row['MoodleID'];
-// --------------------------------------------------------------------
-//   separater
-// --------------------------------------------------------------------
+            // --------------------------------------------------------------------
+            //   separater
+            // --------------------------------------------------------------------
 
 
             $sql = "INSERT INTO attendance (SessionID , SubjectID, DepartAID, MoodleID ) VALUES (?, ?, ?, ?)";
@@ -100,7 +102,7 @@ if ($stmt->num_rows == 0) {
                 } else {
                     // echo 'Did not insert';
                     test("did not insert ");
-                    header('Location: addmanually.html');
+                    header('Location: addmanually.php');
                 }
             }
         } else {
@@ -109,3 +111,12 @@ if ($stmt->num_rows == 0) {
         }
     }
 }
+}
+else{
+    header('Location: addmanually.php');
+    echo "<script type=\"text/javascript\">alert('blll');</script>";
+    
+}
+   
+  
+   

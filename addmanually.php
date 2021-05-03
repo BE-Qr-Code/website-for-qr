@@ -39,7 +39,7 @@ if($_SESSION['isteacher']=='true'){
         <ul class="nav-links">
           <li><a href="dashboard.php">Menu  |</a></li>
           <li>
-            <a href="qr.html">Generate QR Code |</a>
+            <a href="qr.php">Generate QR Code |</a>
           </li>
           <li><a href="logout.php">Log Out</a></li>
          
@@ -51,7 +51,7 @@ if($_SESSION['isteacher']=='true'){
 <li><p class="welcomemsg">Welcome <?php echo $_SESSION['name']; ?> !</p></li>
 </div> 
       </nav>
-    <div class="container-login100" style="background-image: url('images/bg5.png');">
+    <div class="container-login100" style="background-image: url('images/bg5.jpg');">
         <div class="div-for-card" >
             <div class="altbox">
                <div class="div-logo-add">
