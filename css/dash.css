@@ -5,9 +5,7 @@
   margin-left: 300px;
   margin-right: 400px;
 }
-body {
-  background-image: url("./images/bg-01.png");
-}
+
 .cards-list {
   z-index: 0;
   width: 100%;

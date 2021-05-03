@@ -1,56 +1,76 @@
+.label-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 5px !important;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.cont-qr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  min-height: 8vh;
+  min-width: 60vh;
+  /* background-color: rgb(214, 210, 203); */
+  margin-bottom: 20px;
+}
+.a {
+  min-height: 6vh;
+  /* background-color:darkgray; */
+  width: 70%;
+}
+.b {
+  min-height: 6vh;
+  width: 30%;
+  color: black;
+  /* background-color: aqua; */
+}
 
-.label-text{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    margin-bottom: 5px !important;
-  
-  }
-
-  .cont-qr{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction:row;
-    min-height: 8vh;
-    min-width: 60vh;
-    /* background-color: rgb(214, 210, 203); */
-    margin-bottom: 20px;
-  }
-  .a{
-    min-height: 6vh;
-    /* background-color:darkgray; */
-    width:70%;
-
-  }
-  .b{
-    min-height: 6vh;
-    width:30%;
-    /* background-color: aqua; */
-  }
-
-  .input2
-{
-    background:rgba(21, 16, 25,0.9);
-    /* background:rgb(162, 204, 204); */
-    /* background:rgb(168, 84, 124); */
-    /* background:rgb(45,40,48); */
-    height: 40px;
-    width:90%;
-    display: flex;
-    padding:10px;
-    padding-left: 25px;
-    font-size:25px;
-    color: rgb(255, 255, 255);
-    margin-left: 15px;
-    border-radius:1rem;
-    position: relative;
-    opacity: 1;
-    z-index: 2;
-    border:0px;
-    outline:none;
-    position:relative;
-    z-index: 1;
+.input2 {
+  /* background:#343a40; */
+  background: #1a336ec9;
+  /* background:rgba(21, 16, 25,0.9);   latest last used*/
+  /* background:rgb(162, 204, 204); */
+  /* background:rgb(168, 84, 124); */
+  /* background:rgb(45,40,48); */
+  height: 40px;
+  width: 70%;
+  display: flex;
+  padding: 10px;
+  padding-left: 25px;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  margin-left: 15px;
+  border-radius: 6rem;
+  position: relative;
+  opacity: 1;
+  z-index: 2;
+  border: 0px;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+/* .heading1{
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+} */
+.viewcount {
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  background: pink;
+  font-family: Poppins-Regular;
+  font-size: 19px;
+  flex-direction:row;
+  justify-content: space-evenly;
+  color: #666666;
 }

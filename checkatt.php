@@ -61,27 +61,29 @@ if ($_SESSION["id"] == '') {
       </li>
     </div>
   </nav>
-  <div class="container-login100" style="background-image: url('images/bg5.png');">
+  <div class="container-login100" style="background-image: url('images/bg5.jpg');">
     <div class="div-for-card">
       <div class="altbox">
 
-        <form action='studentcheck.php'>
+        <form action='studentcheck.php' method="POST">
           <div class="outerbox">
             <div class="content5">
-              <input type="text" class="subjectid" name="subjectid" method="GET" placeholder="Subject ID" required>
+              <input type="text" class="subjectid" name="subjectid" method="POST" placeholder="Subject ID" required>
 
 
               <!-- </div> -->
               <!-- <div class="btn2"> -->
-              <button id='login-btn' type="submit" class="login100-form-btn">
+              <button id='login-btn' type="submit" class="login100-form-btn10">
                 SUBMIT
               </button>
+
             </div>
 
 
-
-
         </form>
+
+        <button onclick="history.back()">Back</button>
+
       </div>
     </div>
   </div>

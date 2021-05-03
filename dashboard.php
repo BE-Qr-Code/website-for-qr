@@ -50,8 +50,8 @@ if ($_SESSION["id"] == '') {
     </div>
 
   </nav>
-  <div class="limiter">
-    <div class="container-login100" style="background-image: url('images/bg5.png');">
+  <div class="limiter" style="height: 90vh;">
+    <div class="container-login100" style="background-image: url('images/bg5.jpg');">
       <div class="div-for-card">
         <div class="cards-list">
           <div class="card 1">
@@ -81,14 +81,14 @@ if ($_SESSION["id"] == '') {
             </div>
           </div>
 
-          <div class="card 4">
+          <!-- <div class="card 4">
             <div class="card_image">
-              <a class="addman-link" href="addmanually.php"><img src="./images/building.png" /></a>
+              <a class="addman-link" href="#"><img src="./images/building.png" /></a>
             </div>
             <div class="card_title title-black">
               <p></p>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
