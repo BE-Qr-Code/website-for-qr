@@ -1,0 +1,134 @@
+/* //////////////////////////////////// */
+  .box-check-daily {
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 90vh;
+    margin-top: 0px;
+    background: rgba(231, 240, 248, 0.8);
+    border-radius: 1rem;
+    color: rgb(17, 14, 14);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .labelclass {
+    font-size: 20px;
+    font-weight: normal;
+    width:20vh;
+    padding-top:0px;
+    padding-right:0px;
+}
+.div-labelclass{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-right: 2vh; */
+    /* border-bottom: 1px solid #88dbd28f; */
+}
+.div-labelclass h2{
+    /* margin-bottom: 10px; */
+}
+.form-class{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px ;
+    font-size: large;
+    width: 70vh;
+    /* border-top: 1px solid #88dbd28f; */
+    /* border-bottom: 1px solid #88dbd28f; */
+    /* border: 2px solid #88dbd28f;
+    border-radius: 40px; */
+}
+.form-class-divs label{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.form-class-divs select{
+    border-radius: 40px;
+    font-size: medium;
+    padding: 5px 10px;
+    background-color: #3c5387;
+    border: 0px;
+    color: white;
+}
+.form-class-divs option{
+    border-radius: 40px;
+    font-size: medium;
+    padding: 5px;
+}
+.daily-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#sessionDate{
+    border-radius: 40px;
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: #3c5387;
+    border: 0px;
+    color: white;
+}
+#daily-form-btn{
+    /* position: relative; */
+    /* display: block; */
+    width: 150px;
+    height: 36px;
+    /* padding: 15px 20px; */
+    border-radius: 40px;
+    background-color: #5874b4;
+    border: solid 1px transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+}
+#daily-form-btn:hover{
+    background-color: transparent;
+    border-color: #3c5387;
+    color: #3c5387;
+    transition: all .1s ease-in-out;
+}
+.link-pdf{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh;
+    margin-top: 25px;
+    /* border-top: 2px solid #88dbd28f;; */
+    border: 2px solid #88dbd28f;
+    border-radius: 40px;
+    box-shadow: 10px 15px 10px -11px #88dbd28f;
+}
+a{
+    text-decoration: none;
+}
+.input3 {
+    background: #93ddd48f;
+    filter: brightness(150%);
+    height: 30px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-bottom: 0px; 
+    font-size: 20px;
+    color: rgb(31, 4, 4);
+    margin: 2vh;
+    border:1px solid #88dbd28f;
+    position: relative;
+    opacity: 1;
+    z-index: 2;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    font-family: 'Courier New', Courier, monospace;
+    cursor:default;
+    border-radius: 40px;
+  }
+
+  /* //////////////////////////////////// */

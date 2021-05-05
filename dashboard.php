@@ -59,7 +59,7 @@ if ($_SESSION["id"] == '') {
               <a class="addman-link" href="qr.php"><img src="./images/checklist(1).png" /></a>
             </div>
             <div class="card_title title-white">
-              <p>Take Attendance</p>
+              <p>Create QR</p>
             </div>
           </div>
 
@@ -68,7 +68,7 @@ if ($_SESSION["id"] == '') {
               <a class="addman-link" href="checkmain.php"><img src="./images/timetable.png" /></a>
             </div>
             <div class="card_title title-white">
-              <p>Check Attendance</p>
+              <p>Monthly Attendance</p>
             </div>
           </div>
 
@@ -81,14 +81,14 @@ if ($_SESSION["id"] == '') {
             </div>
           </div>
 
-          <!-- <div class="card 4">
+          <div class="card 4">
             <div class="card_image">
-              <a class="addman-link" href="#"><img src="./images/building.png" /></a>
+              <a class="addman-link" href="teacherReportDate.php"><img src="./images/dailyAttReport.png" /></a>
             </div>
             <div class="card_title title-black">
-              <p></p>
+              <p>Session Wise Attendance</p>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>

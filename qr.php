@@ -79,25 +79,29 @@ if ($_SESSION['isteacher'] == 'true') {
             <div class="cont-qr">
               <div class="b">
                 <?php
-                $sessioniddef = "SELECT SessionID from qrcode ORDER BY SessionID DESC limit 1  ;";
-                if ($resultsess = mysqli_query($connection, $sessioniddef)) {
-                  $rowres = mysqli_fetch_array($resultsess);
-                  if ($rowres > 1)
-                    $val = $rowres[0] + 1;
-                  else {
-                    // echo 0;
+                // random alphanumeric string
+                $randomSessionID = substr(md5(microtime()), 0, 6);
+                echo "<script>console.log(\"$randomSessionID\")</script>";
 
-                    $val = 1110;
-                  }
-                  // echo $rowres[0];
-                }
+                // $sessioniddef = "SELECT SessionID from qrcode ORDER BY SessionID DESC limit 1  ;";
+                // if ($resultsess = mysqli_query($connection, $sessioniddef)) {
+                //   $rowres = mysqli_fetch_array($resultsess);
+                //   if ($rowres > 1)
+                //     $val = $rowres[0] + rand(10, 90);
+                //   else {
+                //     // echo 0;
+
+                //     $val = 1110;
+                //   }
+                //   // echo $rowres[0];
+                // }
 
 
                 ?>
                 <p class="label-text">Session:</p>
               </div>
               <div class="a">
-                <input type="text" id="session" class="input2" value=<?php echo $val ?>>
+                <input type="text" id="session" class="input2" value=<?php echo $randomSessionID ?>>
               </div>
             </div>
 

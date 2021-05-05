@@ -8,3 +8,7 @@ function m() {
     console.log(s);
     
 }
+
+function generatePDF(){
+    console.log("genrate report");
+}

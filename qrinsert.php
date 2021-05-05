@@ -10,6 +10,8 @@
     $DepartrQID=$_POST['DepartrQID'];
     $SubjectQID=$_POST['SubjectQID'];
 
+    
+
     function test($msg)
     {
         echo "<script> alert('$msg');</script>";
@@ -28,7 +30,7 @@
             if ($stmt = $connection->prepare($sql)) {
                 // mysqli_prepare($connection, $sql)){
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "isssss", $SessionID, $qrcode, $qrdate, $timestamp, $DepartrQID, $SubjectQID);
+                mysqli_stmt_bind_param($stmt, "ssssss", $SessionID, $qrcode, $qrdate, $timestamp, $DepartrQID, $SubjectQID);
 
                 /* Set the parameters values and execute the statement again to insert another row */
                 $res = mysqli_stmt_execute($stmt);

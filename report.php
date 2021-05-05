@@ -181,14 +181,14 @@ function details()
             <div class="det">
 
               <div class="detmin">
-                <p>Number of Lectues attended:
+                <p>Number of Lectures attended:
                 <p id="AT">
                 </p>
                 </p>
               </div>
               <hr class="solid">
               <div class="detmin">
-                <p>Number of Lectues absent:
+                <p>Number of Lectures absent:
                 <p id="AB">
                 </p>
                 </p>
@@ -196,7 +196,7 @@ function details()
               <hr class="solid">
 
               <div class="detmin">
-                <p>Total Lectues:
+                <p>Total Lectures:
                 <p id="T">
                 </p>
                 </p>

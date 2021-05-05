@@ -11,8 +11,8 @@ if (isset($_GET['submit'])) {
     // $subjectid = $_GET['subject'];
     // echo "\n".$subjectid; 
 }
-echo
-print_r($_SESSION);
+// echo
+// print_r($_SESSION);
 //  echo "\n". $subjectid;
 // get_count($id,$subjectid,$deptid);
 
@@ -62,6 +62,8 @@ print_r($_SESSION);
     <link rel="stylesheet" href="./css/dash.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https:fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -78,30 +80,26 @@ print_r($_SESSION);
         </div>
         <ul class="nav-links">
             <li><a href="dashboard.php">Menu |</a></li>
-            <li>
-                <a href="qr.html"> Generate QR Code |</a>
-            </li>
+            <li><a href="qr.html"> Generate QR Code |</a></li>
             <li><a href="logout.php">Log Out</a></li>
         </ul>
         <div class="welcome">
-
-            <li>
-                <p class="welcomemsg">Welcome <?php echo $_SESSION['name']; ?> !</p>
-            </li>
-        </div>
+            <li><p class="welcomemsg">Welcome <?php echo $_SESSION['name']; ?> !</p></li>
+        </div> 
     </nav>
 
     <div class="container-login100" style="background-image: url('images/bg5.jpg');">
-        <div class="div-for-card">
-
+        <div class="">
+         <!-- div-for-card -->
             <div class="altbox">
-                <div class="outerbox">
-
-
+                <div class="innerBox">
+                <!-- outerbox -->
                     <!-- style="display:none" -->
                     <!-- </form> -->
                     <form action="" method="post">
                         <div class="selectcontainer">
+                            <!-- <select name="subject" id="subj_options" for="Select Subject" onchange="m()"> -->
+                            <div>
                             <select name="subject" id="subj_options" for="Select Subject" onchange="m()">
                                 <option disabled selected>Select Subject</option>
                                 <?php
@@ -118,34 +116,105 @@ print_r($_SESSION);
 
                                 ?>
                             </select>
-                            <?php
-                            if (isset($_POST['submit'])) {
-                                if (!empty($_POST['subject'])) {
-                                    $selected = $_POST['subject'];
-                                    // echo $selected;
-                                    include 'connect.php';
-                                }
-                            }
-                            ?>
-                            <!-- <input type="submit" name="submit" class="dropbtn" value="Get Result"></input> -->
-
-                            <div class="hiddenDIV">
-                            
-                            
                             </div>
-
-
-
                         </div>
+                        <!-- <div class="selectcontainer">
+                            <input type="date" class="date" id="sessionDate" name="sessionDate">
+                        </div> -->
+                        <div class="selectcontainer">
+                            <input type="submit" name="submit" class="dropbtn" value="Get Result"></input>
+                        </div>
+                            
+                            <div class="hiddenDIV" style="display:none;">
+                                <div>vcvx</div>
+                            </div>
+                        
                     </form>
 
+                    <?php
+                        if (isset($_POST['submit'])) {
+                            if (!empty($_POST['subject'])) {
+                                $selected = $_POST['subject'];
+                                // echo $selected;
+                                include 'connect.php';
+                                
+                                // if query is successfully executed
+                                $result = mysqli_query($connection, "SELECT count(*), DepartAID, SubjectID 
+                                                        FROM attendance where DepartAID='$deptid' AND SubjectID='$selected' 
+                                                        GROUP BY DepartAID,SubjectID ;");
 
+                                if($result){
+                                    if(mysqli_num_rows($result) > 0){
+                                        $name= $_SESSION['name'];
+                                        // get total students 'present' for the subject
+                                        $row = mysqli_fetch_array($result);
 
+                                        echo "<script>console.log(".json_encode($row).")</script>";
+                                        
+                                        // select total no. of students enrolled for the subject selected
+                                        $result1 = mysqli_query($connection, "SELECT count(MoodleID) from 
+                                            registration where DepartID = (select DepartSID from Subjects where 
+                                            SubjectID='$selected');");
+                                        
+                                        $row1 = mysqli_fetch_array($result1);
+                                        $r = $row1[0] - $row[0];
+
+                                        $subjectId = $selected;
+                                        $deptid = $deptid;
+                                        $teacherId =  $_SESSION['id'];
+                                        echo "<script>console.log(\"$subjectId $deptid $teacherId\")</script>";
+
+                                        /// Date Value
+                                        // $date = $_POST['sessionDate'];
+                                        // echo "<script>console.log(\"$date \")</script>";
+
+                                        echo "<script>console.log(".json_encode($row1).")</script>";
+                        ?>
+                                        <div>
+                                            <div class="selectcontainer">
+                                            <label for="subjectid" class="labelclass">Prof.:</label>
+                                            <input type="text" class="input3"  value="<?php echo($name); ?>" readonly>
+                                            </div>
+                                            <div class="selectcontainer">
+                                            <label for="subjectid" class="labelclass">SUBJECT:</label>
+                                            <input type="text" class="input3"  value="<?php echo "$row[2]";?>" readonly>
+                                            </div>
+                                            <div class="selectcontainer">
+                                            <label for="present" class="labelclass">PRESENT:</label>
+                                            <input type="text" class="input3"  value="<?php echo "$row[0]";?>" readonly>
+                                            </div>
+                                            <div class="selectcontainer">
+                                            <label for="subjectid" class="labelclass">ABSENT:</label>
+                                            <input type="text" class="input3"  value="<?php echo "$r";?>" readonly>
+                                            </div>
+                                            <div class="selectcontainer">
+                                            <label for="subjectid" class="labelclass">TOTAL:</label>
+                                            <input type="text" class="input3"  value="<?php echo "$row1[0]";?>" readonly>
+                                            </div>
+                                            <div class="selectcontainer">
+                                                <a href="php-tcpdf-meh-tableHTML.php?subjectId=<?php echo $subjectId ?>&deptid=<?php echo $deptid ?>&teacherId=<?php echo $teacherId ?>" target="_blank">Generate PDF</a>
+                                            </div>
+                                        </div>
+
+                                    
+                                <?php }
+                                else{ ?>
+                                    <div class="containerop">
+                                        <label>No Attendance Record Found!</label>
+                                    </div>
+                        <?php    }
+                            }
+                                else{ ?>
+                                    <div class="containerop">
+                                        <label>An unexpected error occured!</label>
+                                    </div>
+                        <?php    }
+                            }
+                        }
+                    ?>
+                        <!-- </div> -->
                 </div>
                 <!-- <input type="button" value="Back" class="checkbtn" onclick="history.back(-1)" readonly> -->
-
-
-
             </div>
             <!-- </div> -->
 
