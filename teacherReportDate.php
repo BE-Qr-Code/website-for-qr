@@ -156,6 +156,7 @@ echo "<script>console.log(\"$teacherId $teacherName $deptid\")</script>";
 
                           echo "<script>console.log(".json_encode($row).")</script>";
                           
+                          
                           // select total no. of students enrolled for the subject selected
                           $result1 = mysqli_query($connection, "SELECT count(MoodleID) from 
                               registration where DepartID = (select DepartSID from Subjects where 
@@ -169,7 +170,7 @@ echo "<script>console.log(\"$teacherId $teacherName $deptid\")</script>";
 
                           $deptid = $deptid;
                           $teacherId =  $_SESSION['id'];
-                          echo "<script>console.log(\"$subjectId $deptid $teacherId $date $sessionId\")</script>";
+                          echo "<script>console.log(\"$subjectId $deptid $teacherId $row[0] $sessionId\")</script>";
                           // echo "<script>console.log(".json_encode($row1).")</script>";
                 ?>        
                     <div>
@@ -179,7 +180,7 @@ echo "<script>console.log(\"$teacherId $teacherName $deptid\")</script>";
                       </div>
                       <div class="div-labelclass">
                       <label for="subjectid" class="labelclass">SUBJECT:</label>
-                      <input type="text" class="input3"  value="<?php echo "$row[2]";?>" readonly>
+                      <input type="text" class="input3"  value="<?php echo "$selected";?>" readonly>
                       </div>
                       <div class="div-labelclass">
                       <label for="present" class="labelclass">PRESENT:</label>
