@@ -197,7 +197,7 @@ var session = document.getElementById('session').value;
             //create the actual QR code (this function ia already defined in the qrcode.min.js)
             qrcode.makeCode(myJSON); 
             alert(html);
-              timeOutId = setTimeout(ajaxFn, 10000);
+              timeOutId = setTimeout(ajaxFn, 20000);
               console.log(timeOutId);
           }
           else{

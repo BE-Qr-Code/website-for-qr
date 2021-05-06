@@ -237,15 +237,20 @@ echo "<script>console.log(\"$teacherId $teacherName $deptid\")</script>";
                       </div>
                   
             <?php    }
+                    else{ ?>
+                      <div class="link-pdf">
+                        <label>No such session Found!</label>
+                      </div>
+            <?php   }
               }
               else{ ?>
-                <div class="containerop">
+                <div class="link-pdf">
                   <label>An unexpected error occured!</label>
                 </div>
         <?php  }
             } 
             else{ ?>
-            <div class="containerop">
+            <div class="link-pdf">
               <label>Kindly select all the values...</label>
             </div>
     <?php   }

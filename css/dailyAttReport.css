@@ -70,6 +70,7 @@
     font-size: medium;
     padding: 5px;
 }
+
 .daily-btn{
     display: flex;
     justify-content: space-between;
@@ -112,6 +113,7 @@
     border-radius: 40px;
     box-shadow: 10px 15px 10px -11px #88dbd28f;
 }
+
 a{
     text-decoration: none;
 }
